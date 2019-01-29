@@ -1,0 +1,39 @@
+
+
+#navbar {
+	background: #000428;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#navbar * {
+	color: #f4f4f4;
+}
+
+.bg-colorgr {
+	background: #000428;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #000428, #004e92);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #000428, #004e92);
+}
+
+.myfont {
+	font-family: 'Roboto Condensed', sans-serif;
+	
+}
+
+/*.border-black {
+	border-style: solid;
+	border-width: 3px;
+	border-color: black; 
+}*/
+
+.border-bottom-color {
+	border-style: none;
+	border: none;
+	border-bottom-style: solid;
+	border-width: 2px;
+	border-bottom-color: #001f3f; 
+}
+
+
