@@ -32,5 +32,13 @@ class User extends Authenticatable
     public function requests() {
         return $this->hasMany("\App\Request");
     }
-    
+
+    public function role() {
+        return $this->belongsTo("\App\Role");
+    }
+   
+    public function userstatus() {
+        return $this->belongsTo("\App\Userstatus");
+    }
+     
 }

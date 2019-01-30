@@ -65,7 +65,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> Laptops </a>
+                                    <a class="nav-link" href="/laptops"> Laptops </a>
                                 </li>
      
                                 {{-- to check if user is an admin, it will show the nav links below --}}

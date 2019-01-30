@@ -12,4 +12,12 @@ class Item extends Model
     public function requests() {
     	return $this->hasMany("\App\Request");
     }
+
+    public function category() {
+        return $this->belongsTo("\App\Category");
+    }
+
+    public function status() {
+        return $this->belongsTo("\App\Status");
+    }
 }

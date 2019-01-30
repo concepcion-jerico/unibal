@@ -11,5 +11,9 @@ class Status extends Model
 
     public function requests() {
     	return $this->hasMany("\App\Request");
+    }    
+
+    public function items() {
+    	return $this->hasMany("\App\Item");
     }
 }
