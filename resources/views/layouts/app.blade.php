@@ -58,24 +58,27 @@
                             @endif
                         @else
                             
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link" href="#" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->student_id }} <span class="caret"></span>
-                                    </a>
-                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="/laptops"> Laptops </a>
                                 </li>
-     
+                                 @if (Auth::user()->role_id == "1" )
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/history/user"> Requests History </a>
+                                </li>
+                                @endif
                                 {{-- to check if user is an admin, it will show the nav links below --}}
                                 @if (Auth::user()->role_id == "2" )
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> Users </a>
+                                    <a class="nav-link" href="/users"> Users </a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user_requests"> User Requests </a>
                                 </li>
       
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> Transaction History </a>
+                                    <a class="nav-link" href="/history"> Requests History </a>
                                 </li>
 
                                 @endif
@@ -93,6 +96,11 @@
                                
                                 </li>
                             
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link" href="#" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->student_id }} <span class="caret"></span>
+                                    </a>
+                                </li>
                         @endguest
                     </ul>
                 </div>

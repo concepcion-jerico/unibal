@@ -9,8 +9,8 @@ class Status extends Model
 {
     use SoftDeletes;
 
-    public function requests() {
-    	return $this->hasMany("\App\Request");
+    public function laptoprequests() {
+    	return $this->hasMany("\App\LaptopRequest");
     }    
 
     public function items() {

@@ -29,8 +29,8 @@ class User extends Authenticatable
     ];
 
 
-    public function requests() {
-        return $this->hasMany("\App\Request");
+    public function laptoprequests() {
+        return $this->hasMany("\App\LaptopRequest");
     }
 
     public function role() {

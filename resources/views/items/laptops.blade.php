@@ -71,14 +71,21 @@
 								{{-- <input type="number" min=0 name="quantity" id="quantity" class="form-control my-2"> --}}
 									{{-- if item status is available --}}
 									@if($indiv_item->status_id == "3")
-									<button class="btn btn-success btn-block"> 
+									<a href="/requests/{{$indiv_item->id }}" class="btn btn-success btn-block"> 
 										Request for Approval
-									</button>
+									</a>
+
 
 									@elseif($indiv_item->status_id == "2")
 									<button class="btn btn-danger btn-block" disabled> 
 										Already in Use
+									</button>							
+
+									@elseif($indiv_item->status_id == "1")
+									<button class="btn btn-info btn-block" disabled> 
+										Pending User Request
 									</button>
+
 									@endif
 							</div>
 						</form>

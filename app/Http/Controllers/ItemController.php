@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Item;
 use App\Category;
+use App\User;
+use App\LaptopRequest;
 use Session;
+use Auth;
 
 class ItemController extends Controller
 {
     public function showItems() {
     	$items = Item::all();
-    	return view('items.laptops', compact('items'));
+        $laptoprequest = LaptopRequest::all();
+
+    	return view('items.laptops', compact(['items', 'laptoprequest']));
     }
 
     public function showAddItemForm() {
