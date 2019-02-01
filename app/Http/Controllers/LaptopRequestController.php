@@ -56,7 +56,8 @@ class LaptopRequestController extends Controller
     	$item->status_id = 2;
     	$item->save();
 
-    	return redirect('/user_requests');
+        // return redirect('/user_requests');
+    	return redirect('/history');
 
     }
 
@@ -70,24 +71,46 @@ class LaptopRequestController extends Controller
     	$item->status_id = 3; //item will become available for use
     	$item->save();
 
-    	return redirect('/user_requests');
+        // return redirect('/user_requests');
+    	return redirect('/history');
 
     }
 
 
     public function showHistory() {
-        $history = LaptopRequest::whereIn('status_id', ['2','4'])->get();
+        // $history = LaptopRequest::whereIn('status_id', ['2','4', '6', '5'])->get();
+        $history = LaptopRequest::all();
 
         return view('requests.history', compact('history'));
     }
 
 	public function showHistoryUser() {
-		$history = LaptopRequest::where('user_id', '=', Auth::user())->get();
-
+		$history = LaptopRequest::where('user_id', '=', Auth::user()->id)->get();
+        // dd(Auth::user()->id);
         return view('requests.history', compact('history'));
     }
 
+    public function returnItem($id, Request $request) {
+        $laptoprequest = LaptopRequest::find($id);
 
+        $laptoprequest->status_id = 6; //when user clicks return button, status will change to pending return confirmation
+        $laptoprequest->save();
+
+        return redirect('/history/user');
+    }
+
+    public function confirmReturnItem($id, Request $request) {
+        $laptoprequest = LaptopRequest::find($id);
+
+        $laptoprequest->status_id = 5; //when admin clicks confirm return button, status will change to RETURNED
+        $laptoprequest->save();
+
+        $item = Item::find($request->item_id);
+        $item->status_id = 3; //item will become available for use
+        $item->save();
+
+        return redirect('/history');
+    }
   
 
 }

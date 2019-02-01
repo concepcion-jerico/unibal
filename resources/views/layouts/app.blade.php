@@ -62,25 +62,24 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/laptops"> Laptops </a>
                                 </li>
-                                 @if (Auth::user()->role_id == "1" )
+                                 @if (Auth::user()->role_id == "1" ) {{-- if a USER --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/history/user"> Requests History </a>
+                                    <a class="nav-link" href="/history/user"> Requests </a>
                                 </li>
                                 @endif
                                 {{-- to check if user is an admin, it will show the nav links below --}}
                                 @if (Auth::user()->role_id == "2" )
                                 <li class="nav-item">
+                                    <a class="nav-link" href="/history"> Requests </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="/users"> Users </a>
                                 </li>
                                 
-                                <li class="nav-item">
+{{--                                 <li class="nav-item">
                                     <a class="nav-link" href="/user_requests"> User Requests </a>
-                                </li>
+                                </li> --}}
       
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/history"> Requests History </a>
-                                </li>
-
                                 @endif
      
                                 <li>

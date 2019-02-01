@@ -14,8 +14,11 @@ class ItemController extends Controller
 {
     public function showItems() {
     	$items = Item::all();
-        $laptoprequest = LaptopRequest::all();
+        /*if status of laptop is already in use for that user*/
+  
+        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->get();
 
+        // dd($laptoprequest);
     	return view('items.laptops', compact(['items', 'laptoprequest']));
     }
 
