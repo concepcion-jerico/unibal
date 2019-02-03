@@ -10,13 +10,13 @@
 @endif --}}
 
 
-<div class="container">
+<div class="container pt-4 myfont">
 	<h1 class="text-center"> User Lists </h1>
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
 
 			<table class="table table-hover table-sm">
-				<thead class="text-center">
+				<thead class="text-center bg-blue font-white">
 					<tr>
 						<th>Student ID</th>
 						<th>First Name</th>
@@ -39,12 +39,12 @@
 						<td class="text-center">{{ $user->role->name }}</td>
 						<td class="text-center">{{ $user->userstatus->name }}</td>
 
-						<td> 
+						<td class="text-center"> 
 							@if($user->userstatus_id == "2")
 							<a href="/users/approve/{{ $user->id}}" class="btn btn-success btn-block"> Activate </a>
 
 							@else
-							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger"> Deactivate </a>
+							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger btn-block"> Deactivate </a>
 							@endif
 						</td>
 

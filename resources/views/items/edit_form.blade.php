@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div class="container">
+<div class="container pt-4">
 	<h1> Edit Laptop Details: </h1>
 
 	@if(Session::has("success_message"))

@@ -16,7 +16,7 @@ class ItemController extends Controller
     	$items = Item::all();
         /*if status of laptop is already in use for that user*/
   
-        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->get();
+        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->count();
 
         // dd($laptoprequest);
     	return view('items.laptops', compact(['items', 'laptoprequest']));
@@ -122,8 +122,10 @@ class ItemController extends Controller
     	$keyword = $request->searchbar;
 
     	$items = Item::where('name', 'LIKE', "%{$keyword}%")->get();
+        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->count();
 
-    	return view('items.laptops', compact('items'));
+
+    	return view('items.laptops', compact(['items', 'laptoprequest']));
 
     	
     }

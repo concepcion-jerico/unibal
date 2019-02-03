@@ -5,21 +5,21 @@
 
 {{-- @if(auth::check()) --}}
 
-@if(Session::has("success_message"))
-<div class="alert alert-success">
-	{{ Session::get("success_message") }}
-</div>
-@endif
 
-<h1 class="text-center"> Laptops </h1>
 
-<div class="container">
+<div class="container pt-4 myfont">
+	@if(Session::has("success_message"))
+	<div class="alert alert-success">
+		{{ Session::get("success_message") }}
+	</div>
+	@endif
+	<h1 class="text-center"> Laptops </h1>
 	<div class="row">
 		<div class="col-md-12 text-center">
 
-{{-- 			@if($laptoprequest)
+			@if($laptoprequest != 0) 
 				<p><small>*Request access has been disabled due to currently borrowed laptop not yet returned by the User</small></p>
-			@endif --}}
+			@endif
 
 			@if (Auth::user()->role_id == "2" )
 			<a href="/laptops/add" class="btn btn-success mb-2"> Add New Item </a>
@@ -82,7 +82,8 @@
 								{{-- <label for="quantity" class="mt-2"> Quantity: </label> --}}
 								{{-- <input type="number" min=0 name="quantity" id="quantity" class="form-control my-2"> --}}
 							
-								{{-- @if($laptoprequest->user_id != Auth::user()->id)  --}}
+								{{-- if it is empty; user can access buttons below --}}
+								@if($laptoprequest == 0) 
 									{{-- if item status is available --}}
 									@if($indiv_item->status_id == "3")
 									<a href="/requests/{{$indiv_item->id }}" class="btn btn-success btn-block"> 
@@ -102,12 +103,12 @@
 
 									@endif
 
-								{{-- @else --}}
+								@else
 									<button class="btn btn-info btn-danger btn-block" disabled> 
 										Disabled
 									</button>
 									
-								{{-- @endif --}}
+								@endif
 							
 							</div>
 						</form>

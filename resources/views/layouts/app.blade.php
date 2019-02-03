@@ -16,6 +16,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -29,10 +31,10 @@
 </head>
 <body>
     <div id="app">
-        <nav id="navbar" class="navbar navbar-expand-md">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    @yield('title', 'UNI-BAL')
+        <nav id="mainNav" class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a id="title" class="navbar-brand" href="{{ url('/') }}">
+                    <img id="logo" src="/images/logo.png">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,20 +42,28 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="ulright navbar-nav mr-auto">
+                        @guest
 
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link font-weight-bold active1" href="#" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->student_id }} <span class="caret"></span>
+                            </a>
+                        </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="ulright navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link font-weight-bold {{active('login.blade.php')}}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link font-weight-bold {{active('register.blade.php')}}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -64,13 +74,27 @@
                                 </li>
                                  @if (Auth::user()->role_id == "1" ) {{-- if a USER --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/history/user"> Requests </a>
+                                    <a class="nav-link" href="/history/user"> Requests 
+                                        <span class="badge badge-primary badge-pill">
+                                        @if(Auth::user()->role_id == 1)
+                                            {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->where('user_id', '=', Auth::user()->id)->get()->count() }}
+                                        @endif
+                                        </span>
+
+                                    </a>
                                 </li>
                                 @endif
                                 {{-- to check if user is an admin, it will show the nav links below --}}
                                 @if (Auth::user()->role_id == "2" )
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/history"> Requests </a>
+                                    <a class="nav-link" href="/history"> Requests 
+                                        <span class="badge badge-primary badge-pill">
+                                        @if (Auth::user()->role_id == 2){{-- if user is ADMIN, it will show number of items that are pending request --}}
+                                            {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->get()->count() }}
+
+                                        @endif
+                                        </span>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/users"> Users </a>
@@ -95,22 +119,21 @@
                                
                                 </li>
                             
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link" href="#" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->student_id }} <span class="caret"></span>
-                                    </a>
-                                </li>
+
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="mainSection">
             @yield('content')
         </main>
     </div>
 
+
+
+<script src="/js/script.js"></script>
 
 
 </body>

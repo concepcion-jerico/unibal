@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function findItems($id) {
     	$category = Category::find($id);
     	$items = $category->items;
-	     $laptoprequest = LaptopRequest::where('status_id', '=', 2)->where('user_id', '=', Auth::user()->id)->get();
+        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->count();
 
     	return view('items.laptops', compact(['items', 'laptoprequest']));
 

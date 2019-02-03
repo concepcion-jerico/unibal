@@ -3,9 +3,9 @@
 
 @section('content')
 
-<h1 class="text-center"> Add a new item </h1>
 
-<div class="container">
+<div class="container pt-4">
+	<h1 class="text-center"> Add a new item </h1>
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
 			<form action="" enctype="multipart/form-data" method="POST">

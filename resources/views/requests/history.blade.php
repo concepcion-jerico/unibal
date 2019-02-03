@@ -11,7 +11,7 @@
 
 
 
-<div class="container">
+<div class="container pt-4 myfont">
 	<h1> Requests </h1>
 	<div class="row">
 
@@ -65,9 +65,9 @@
 	
 			<div class="tab-content">
 				<div class="tab-pane" id="pending" role="tabpanel">
-					<h3>Pending</h3>
+					<h5 class="mt-2">Pending</h5>
 					<table class="table table-hover table-sm">
-						<thead class="text-center">
+						<thead class="text-center bg-blue font-white">
 							<tr>
 								@if(Auth::user()->role_id == 2)
 								<th>User ID</th>
@@ -185,7 +185,7 @@
 				<div class="tab-pane" id="return" role="tabpanel">
 					<h5 class="mt-2">Pending Return / For Return Confirmation </h5>
 					<table class="table table-hover table-sm">
-						<thead class="text-center">
+						<thead class="text-center  bg-blue font-white">
 							<tr>
 
 								<th>User ID</th>
@@ -197,7 +197,7 @@
 								<th>Status</th>
 								<th>Action</th>
 								<th>Date Requested</th>
-								<th>Date Returned</th>
+								
 							</tr>
 						</thead>
 
@@ -255,9 +255,9 @@
 	@endif
 
 				<div class="tab-pane" id="history" role="tabpanel">
-					<h3>History</h3>
+					<h5 class="mt-2">History </h5>
 					<table class="table table-hover table-sm">
-						<thead class="text-center">
+						<thead class="text-center bg-blue font-white">
 							<tr>
 								@if(Auth::user()->role_id == 2)
 								<th>User ID</th>
@@ -349,19 +349,7 @@
 						</tbody>
 					</table>
 				</div> {{-- end HISTORY tab pane --}}
-
-
-
-
-
-
-
-
 			</div> {{-- end tab content --}}
-
-
-		
-
 		</div> {{-- end cols --}}
  	</div> {{-- end row --}}
 </div> {{-- end container --}}
