@@ -152,3 +152,39 @@ background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, 
 
 }
 
+.btn-red1 {
+	background: #A8201A;
+	
+}
+
+.notclick {
+	pointer-events: none;
+}
+
+.btn-green1 {
+	background: #0B5E10;
+}
+.btn-blue1 {
+	background: #3693B5;
+	pointer-events: none;
+}
+
+.btn-disabled {
+	background: #2F2E30;
+	pointer-events: none;
+}
+
+.font-red {
+	color: #D62920;
+	font-size: 1.2rem;
+}
+
+.alink:hover {
+	color: #3693B5;
+
+}
+
+.alink:active {
+	color: red;
+
+}

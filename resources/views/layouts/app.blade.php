@@ -70,11 +70,11 @@
                             
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/laptops"> Laptops </a>
+                                    <a class="nav-link alink" href="/laptops"> Laptops </a>
                                 </li>
                                  @if (Auth::user()->role_id == "1" ) {{-- if a USER --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/history/user"> Requests 
+                                    <a class="nav-link alink" href="/history/user"> Requests 
                                         <span class="badge badge-primary badge-pill">
                                         @if(Auth::user()->role_id == 1)
                                             {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->where('user_id', '=', Auth::user()->id)->get()->count() }}
@@ -87,7 +87,7 @@
                                 {{-- to check if user is an admin, it will show the nav links below --}}
                                 @if (Auth::user()->role_id == "2" )
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/history"> Requests 
+                                    <a class="nav-link alink" href="/history"> Requests 
                                         <span class="badge badge-primary badge-pill">
                                         @if (Auth::user()->role_id == 2){{-- if user is ADMIN, it will show number of items that are pending request --}}
                                             {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->get()->count() }}
@@ -97,7 +97,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/users"> Users </a>
+                                    <a class="nav-link alink" href="/users"> Users </a>
                                 </li>
                                 
 {{--                                 <li class="nav-item">
@@ -107,7 +107,7 @@
                                 @endif
      
                                 <li>
-                                    <a class="nav-link" href="{{ route('logout') }}"
+                                    <a class="nav-link alink" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

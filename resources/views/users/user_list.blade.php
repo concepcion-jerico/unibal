@@ -41,10 +41,10 @@
 
 						<td class="text-center"> 
 							@if($user->userstatus_id == "2")
-							<a href="/users/approve/{{ $user->id}}" class="btn btn-success btn-block"> Activate </a>
+							<a href="/users/approve/{{ $user->id}}" class="btn btn-success btn-block btn-green1"> Activate </a>
 
 							@else
-							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger btn-block"> Deactivate </a>
+							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger btn-block btn-red1"> Deactivate </a>
 							@endif
 						</td>
 

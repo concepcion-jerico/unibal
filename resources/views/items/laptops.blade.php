@@ -18,7 +18,7 @@
 		<div class="col-md-12 text-center">
 
 			@if($laptoprequest != 0) 
-				<p><small>*Request access has been disabled due to currently borrowed laptop not yet returned by the User</small></p>
+				<p class="font-red"><small>*Request access has been disabled due to currently borrowed laptop not yet returned by the User</small></p>
 			@endif
 
 			@if (Auth::user()->role_id == "2" )
@@ -86,25 +86,25 @@
 								@if($laptoprequest == 0) 
 									{{-- if item status is available --}}
 									@if($indiv_item->status_id == "3")
-									<a href="/requests/{{$indiv_item->id }}" class="btn btn-success btn-block"> 
+									<a href="/requests/{{$indiv_item->id }}" class="btn btn-success btn-block btn-green1"> 
 										Request for Approval
 									</a>
 
 
 									@elseif($indiv_item->status_id == "2")
-									<button class="btn btn-danger btn-block" disabled> 
+									<button class="btn btn-block btn-danger btn-red1 notclick"> 
 										Already in Use
 									</button>							
 
 									@elseif($indiv_item->status_id == "1")
-									<button class="btn btn-info btn-block" disabled> 
+									<button class="btn btn-info btn-block btn-blue1"> 
 										Pending User Request
 									</button>
 
 									@endif
 
 								@else
-									<button class="btn btn-info btn-danger btn-block" disabled> 
+									<button class="btn btn-block btn-disabled font-white"> 
 										Disabled
 									</button>
 									
