@@ -4,8 +4,8 @@
 @section('content')
 
 
-<div class="container pt-4">
-	<h1> Edit Laptop Details: </h1>
+<div class="container pt-3">
+	<h3> Edit Laptop Details: </h3>
 
 	@if(Session::has("success_message"))
 	<div class="alert alert-success">
@@ -73,7 +73,7 @@
 						<input type="text" name="status_id" id="status_id" class="form-control col-md-8" value="{{ $item->status_id }}">
 					</div>
 
-					<button class="btn btn-success btn-block col-md-8 offset-md-2"> Update Item </button>
+					<button class="btn btn-success btn-block col-md-8 offset-md-2 btn-green1"> Update Item </button>
 
 				
 

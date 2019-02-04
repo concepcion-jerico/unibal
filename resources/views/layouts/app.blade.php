@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- favicon --}}
+    <link rel="icon" href="/images/logo.png" type="image/gif">
+
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -59,22 +63,22 @@
                         <!-- Authentication Links -->
                         @guest 
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold {{active('login.blade.php')}}" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link font-weight-bold alink {{Request::routeIs('login') ? 'active1' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link font-weight-bold {{active('register.blade.php')}}" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link font-weight-bold alink {{Request::routeIs('register') ? 'active1' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             
 
                                 <li class="nav-item">
-                                    <a class="nav-link alink" href="/laptops"> Laptops </a>
+                                    <a class="nav-link alink {{Request::routeIs('laptops') ? 'active1' : '' }}" href="/laptops"> Laptops </a>
                                 </li>
                                  @if (Auth::user()->role_id == "1" ) {{-- if a USER --}}
                                 <li class="nav-item">
-                                    <a class="nav-link alink" href="/history/user"> Requests 
+                                    <a class="nav-link alink {{Request::routeIs('requests') ? 'active1' : '' }}" href="/history/user"> Requests 
                                         <span class="badge badge-primary badge-pill">
                                         @if(Auth::user()->role_id == 1)
                                             {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->where('user_id', '=', Auth::user()->id)->get()->count() }}
@@ -87,7 +91,7 @@
                                 {{-- to check if user is an admin, it will show the nav links below --}}
                                 @if (Auth::user()->role_id == "2" )
                                 <li class="nav-item">
-                                    <a class="nav-link alink" href="/history"> Requests 
+                                    <a class="nav-link alink {{Request::routeIs('requests') ? 'active1' : '' }}" href="/history"> Requests 
                                         <span class="badge badge-primary badge-pill">
                                         @if (Auth::user()->role_id == 2){{-- if user is ADMIN, it will show number of items that are pending request --}}
                                             {{ \App\LaptopRequest::whereIn('status_id', ['1', '6', '2'])->get()->count() }}
@@ -97,7 +101,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link alink" href="/users"> Users </a>
+                                    <a class="nav-link alink {{Request::routeIs('users') ? 'active1' : '' }}" href="/users"> Users </a>
                                 </li>
                                 
 {{--                                 <li class="nav-item">

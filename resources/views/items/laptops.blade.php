@@ -22,7 +22,7 @@
 			@endif
 
 			@if (Auth::user()->role_id == "2" )
-			<a href="/laptops/add" class="btn btn-success mb-2"> Add New Item </a>
+			<a href="/laptops/add" class="btn btn-success mb-2 btn-green1"> Add New Item </a>
 			@endif
 
 			<form action="/laptops/search" method="POST" class="row">
@@ -36,11 +36,11 @@
 				</div>
 			</form>
 			<div class="btn-group">
-				<a href="/laptops" class="btn btn-primary"> All </a>
+				<a href="/laptops" class="btn btn-primary bg-blue alink2"> All </a>
 				
 				{{-- filter per category --}}
 				@foreach (App\Category::all() as $category)
-					<a href="/laptops/categories/{{ $category->id }}" class="btn btn-primary"> {{ $category->name }}</a>
+					<a href="/laptops/categories/{{ $category->id }}" class="btn btn-primary bg-blue alink2"> {{ $category->name }}</a>
 
 				@endforeach
 			</div>

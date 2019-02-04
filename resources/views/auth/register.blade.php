@@ -30,7 +30,7 @@
 
 
 
-        <div class="col-md-5 mt-5">
+        <div class="col-md-5 mt-4">
             <div class="card">
                 <div class="card-header text-center myfont bg-white lead font-weight-bold">{{ __('STUDENT\'S ACCOUNT REGISTRATION') }}</div>
 
@@ -40,7 +40,7 @@
 
                         {{-- firstname --}}
                         <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label-lg text-md-right">{{ __('First 
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('First 
                         Name: ') }}</label>
 
                             <div class="col-md-6">
@@ -56,7 +56,7 @@
 
                         {{-- lastname --}}
                          <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label-lg text-md-right">{{ __('Last 
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last 
                         Name: ') }}</label>
 
                             <div class="col-md-6">
@@ -72,7 +72,7 @@
 
                          {{-- studentID --}}
                          <div class="form-group row">
-                            <label for="student_id" class="col-md-4 col-form-label-lg text-md-right">{{ __('Student 
+                            <label for="student_id" class="col-md-4 col-form-label text-md-right">{{ __('Student 
                         ID: ') }} </label>
 
                             <div class="col-md-6">
@@ -89,7 +89,7 @@
  
                         {{-- email address --}}
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label-lg text-md-right">{{ __('E-Mail Address:') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} border-bottom-color" name="email" value="{{ old('email') }}" required placeholder="myemail@email.com">
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label-lg text-md-right">{{ __('Password:') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} border-bottom-color" name="password" required placeholder="Input at least six(6) characters">
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label-lg text-md-right">{{ __('Confirm Password:') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control border-bottom-color" name="password_confirmation" required placeholder="Input at least six(6) characters">

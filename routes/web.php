@@ -19,33 +19,35 @@ Route::get('/', function () {
 
 
 Route::middleware("auth")->group(function (){ 
-		Route::get('/laptops', "ItemController@showItems");
-		Route::get('/laptops/categories/{id}', "CategoryController@findItems");
-		Route::get('/laptops/status/available', "StatusController@showAvailableItems");
-		Route::post('/laptops/search', "ItemController@searchFilterItems");
+		Route::get('/laptops', "ItemController@showItems")->name('laptops');
+		Route::get('/laptops/categories/{id}', "CategoryController@findItems")->name('laptops');
+		Route::get('/laptops/status/available', "StatusController@showAvailableItems")->name('laptops');
+		Route::post('/laptops/search', "ItemController@searchFilterItems")->name('laptops');
 
-		Route::get('/requests/{id}', "LaptopRequestController@showRequestPage");
-		Route::patch('/requests/{id}/confirm', "LaptopRequestController@submitRequest");
-		Route::patch('/user_requests/return/{id}', "LaptopRequestController@returnItem");
-		Route::get('/history/user', "LaptopRequestController@showHistoryUser");
+		Route::get('/requests/{id}', "LaptopRequestController@showRequestPage")->name('requests');
+		Route::patch('/requests/{id}/confirm', "LaptopRequestController@submitRequest")->name('requests');
+		Route::patch('/user_requests/return/{id}', "LaptopRequestController@returnItem")->name('requests');
+		Route::get('/history/user', "LaptopRequestController@showHistoryUser")->name('requests');
 
-		Route::get('/laptops/add', "ItemController@showAddItemForm");
-		Route::post('/laptops/add', "ItemController@saveItems");
-		Route::get('/laptops/{id}/edit', "ItemController@showEditForm");
-		Route::get('/laptops/{id}', "ItemController@itemDetails");
-		Route::patch('/laptops/{id}', "ItemController@editItem");
-		Route::delete('/laptops/{id}/delete', "ItemController@deleteItem");
+		Route::get('/laptops/add', "ItemController@showAddItemForm")->name('laptops');
+		Route::post('/laptops/add', "ItemController@saveItems")->name('laptops');
+		Route::get('/laptops/{id}/edit', "ItemController@showEditForm")->name('laptops');
+		Route::get('/laptops/{id}', "ItemController@itemDetails")->name('laptops');
+		Route::patch('/laptops/{id}', "ItemController@editItem")->name('laptops');
+		Route::delete('/laptops/{id}/delete', "ItemController@deleteItem")->name('laptops');
 
-		Route::get('/users', "UserController@showUsers");
-		Route::get('/users/approve/{id}', "UserController@approveUsers");
-		Route::get('/users/deactivate/{id}', "UserController@deactivateUsers");
+		Route::get('/users', "UserController@showUsers")->name('users');
+		Route::get('/users/approve/{id}', "UserController@approveUsers")->name('users');
+		Route::get('/users/deactivate/{id}', "UserController@deactivateUsers")->name('users');
+		Route::get('/users/edit/{id}', "UserController@showEditUsersPage")->name('users');
+		Route::patch('/users/edit/update/{id}', "UserController@updateUserInfo")->name('users');
 
-		Route::get('/user_requests', "LaptopRequestController@showUserRequests");
-		Route::patch('/user_requests/approval/{id}', "LaptopRequestController@approveUserRequest");
-		Route::patch('/user_requests/reject/{id}', "LaptopRequestController@rejectUserRequest");
-		Route::patch('/user_requests/confirmreturn/{id}', "LaptopRequestController@confirmReturnItem");
+		Route::get('/user_requests', "LaptopRequestController@showUserRequests")->name('requests');
+		Route::patch('/user_requests/approval/{id}', "LaptopRequestController@approveUserRequest")->name('requests');
+		Route::patch('/user_requests/reject/{id}', "LaptopRequestController@rejectUserRequest")->name('requests');
+		Route::patch('/user_requests/confirmreturn/{id}', "LaptopRequestController@confirmReturnItem")->name('requests');
 
-		Route::get('/history', "LaptopRequestController@showHistory");
+		Route::get('/history', "LaptopRequestController@showHistory")->name('requests');
 
 
 	});

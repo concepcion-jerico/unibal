@@ -10,8 +10,15 @@
 @endif --}}
 
 
-<div class="container pt-4 myfont">
+<div class="container-fluid pt-4 myfont">
 	<h1 class="text-center"> User Lists </h1>
+	
+	@if(Session::has("user_updated"))
+	<div class="alert alert-success">
+		{{ Session::get("user_updated") }}
+	</div>
+	@endif
+
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
 
@@ -41,11 +48,14 @@
 
 						<td class="text-center"> 
 							@if($user->userstatus_id == "2")
-							<a href="/users/approve/{{ $user->id}}" class="btn btn-success btn-block btn-green1"> Activate </a>
+							<a href="/users/approve/{{ $user->id}}" class="btn btn-success btn-green1 btn-size"> Activate </a>
 
 							@else
-							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger btn-block btn-red1"> Deactivate </a>
+							<a href="/users/deactivate/{{ $user->id}}" class="btn btn-danger btn-red1 btn-size"> Deactivate </a>
 							@endif
+
+							<a href="/users/edit/{{ $user->id}}" class="btn btn-outline-success"> Edit </a>
+
 						</td>
 
 					</tr>

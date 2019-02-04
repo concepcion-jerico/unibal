@@ -39,7 +39,7 @@
 	color: #333;
 	transition: color 0.4s;
 	font-weight: 500;
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	text-transform: uppercase;
 }
 
@@ -80,12 +80,12 @@
 }
 
 .carou {	
-	height: 89vh;
+	height: 80vh;
 }
 
 #regheader {
 	position: absolute;
-	top: 40%;
+	top: 45%;
 	left: 35%;
 	z-index: 30;
 	transform: translate(-50%, -50%);
@@ -93,12 +93,12 @@
   	text-shadow: 0px 1px 14px rgba(0,0,0,1.0);
   	color: #DCE5E8;
 	font-family: 'Open Sans Condensed', sans-serif;
-  	font-size: 6rem;
+  	font-size: 4rem;
 }
  
 #regheader2 {
 	position: absolute;
-	top: 40%;
+	top: 45%;
 	left: 35%;
 	z-index: 30;
 	transform: translate(-50%, -50%);
@@ -106,7 +106,7 @@
   	text-shadow: 0px 1px 14px rgba(0,0,0,1.0);
   	color: #DCE5E8;
 	font-family: 'Open Sans Condensed', sans-serif;
-  	font-size: 6rem;
+  	font-size: 4rem;
 }
 
  
@@ -124,7 +124,7 @@
 background: #000428;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	height: 89vh;
+	height: 85vh;
 
 }
 
@@ -146,9 +146,9 @@ background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, 
 
 .active1 {
 
-	border-bottom:	solid !important;
-	border-width: 4px !important;
-	border-bottom-color: #004e92 !important;
+	border-bottom:	solid;
+	border-width: 4px;
+	border-bottom-color: #004e92;
 
 }
 
@@ -181,10 +181,25 @@ background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, 
 
 .alink:hover {
 	color: #3693B5;
+	/*color: red;*/
+
+}
+ 
+.alink2:hover {
+	color: #3693B5;
+	background:none !important;
+	transition: 0.4s;
+	background: white;
 
 }
 
-.alink:active {
-	color: red;
-
+.btn-size {
+	width: 50%;
+	text-align: center;
+	padding: 4px;
+	
 }
+
+
+
+ 

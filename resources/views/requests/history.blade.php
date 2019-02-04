@@ -156,7 +156,7 @@
 											{{ csrf_field() }}
 											{{ method_field("PATCH") }}
 
-											<button type="submit" class="btn btn-success btn-block"> Approve </button>
+											<button type="submit" class="btn btn-sm btn-block btn-success"> Approve </button>
 											<input type="text" name="item_id" value="{{ $laptoprequest->item_id }}" hidden>
 										</form>
 
@@ -164,7 +164,7 @@
 											{{ csrf_field() }}
 											{{ method_field("PATCH") }}
 											
-											<button type="submit" class="btn btn-danger btn-block"> Reject </button>
+											<button type="submit" class="btn btn-sm btn-block btn-danger"> Reject </button>
 											<input type="text" name="item_id" value="{{ $laptoprequest->item_id }}" hidden>
 										</form>
 

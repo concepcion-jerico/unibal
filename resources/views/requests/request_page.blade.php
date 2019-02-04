@@ -3,14 +3,14 @@
 
 @section('content')
 
-@if(Session::has("request_sent"))
-<div class="alert alert-success">
-	{{ Session::get("request_sent") }}
-</div>
-@endif
 
-<h1 class="text-center"> Confirmation of Request </h1>
+<h1 class="text-center pt-4"> Confirmation of Request </h1>
 
+	@if(Session::has("request_sent"))
+	<div class="alert alert-success">
+		{{ Session::get("request_sent") }}
+	</div>
+	@endif
 <div class="container mt-5">
 
 	<div class="row">
@@ -37,7 +37,7 @@
  {{-- 					<label class="col-md-4">Description:</label>
 					<textarea class="form-control col-md-8" disabled rows="5"> {{ $item->description }} </textarea> --}}
 
-					<h5 class="form-control col-md-2 d-inline"> {{ $item->status->name }}</h5>
+					<h5 class="form-control col-md-2 d-inline btn-green1 font-white"> {{ $item->status->name }}</h5>
 					<small class="col-md-10">*Please return the laptop within five(5) days from the date of receipt.</small>
 
 					@if($item->status_id == 3)

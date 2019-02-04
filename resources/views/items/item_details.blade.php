@@ -27,7 +27,7 @@
 
 
 				<a href="/laptops/{{ $items->id }}/edit" class="btn-primary btn m-2 col-md-4 offset-md-4"> Edit Details </a>
-				<button class="btn btn-danger m-2 col-md-4" data-toggle="modal" data-target="#confirmDelete"> Delete Item </button>
+				<button class="btn btn-danger m-2 col-md-4 btn-red1" data-toggle="modal" data-target="#confirmDelete"> Delete Item </button>
 
 			</div> {{-- end row --}}
 		</div> {{-- end cols-6 --}}
