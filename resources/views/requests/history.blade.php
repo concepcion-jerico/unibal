@@ -339,7 +339,7 @@
 										@endif
 									</td>
 
-									<td class="text-center">{{ $laptoprequest->item->created_at->format('F j, Y') }}</td>
+									<td class="text-center">{{ $laptoprequest->created_at->format('F j, Y') }}</td>
 									@if($laptoprequest->status_id == 5)
 									<td class="text-center">{{ $laptoprequest->item->updated_at->format('F j, Y') }}</td>
 									@endif
