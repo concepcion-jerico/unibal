@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Item;
+use App\LaptopRequest;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,7 +28,13 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
-        return view('auth.login');
+        $items = Item::all();
+        /*if status of laptop is already in use for that user*/
+  
+        $laptoprequest = LaptopRequest::where('user_id', '=', Auth::user()->id)->where('status_id', '=', '2')->count();
+
+        // dd($laptoprequest);
+        return view('items.laptops', compact(['items', 'laptoprequest']));
     }
 
     // public function checkUser() {
