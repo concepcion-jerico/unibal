@@ -76,6 +76,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link alink {{Request::routeIs('laptops') ? 'active1' : '' }}" href="/laptops"> Laptops </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link alink {{Request::routeIs('categories') ? 'active1' : '' }}" href="/categories"> Categories </a>
+                                </li>
                                  @if (Auth::user()->role_id == "1" ) {{-- if a USER --}}
                                 <li class="nav-item">
                                     <a class="nav-link alink {{Request::routeIs('requests') ? 'active1' : '' }}" href="/history/user"> Requests 

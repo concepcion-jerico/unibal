@@ -23,7 +23,12 @@
 
 			@if (Auth::user()->role_id == "2" )
 			<a href="/laptops/add" class="btn btn-success mb-2 btn-green1"> Add New Item </a>
+			
 			@endif
+
+
+
+
 
 			<form action="/laptops/search" method="POST" class="row">
 
@@ -85,18 +90,18 @@
 								{{-- if it is empty; user can access buttons below --}}
 								@if($laptoprequest == 0) 
 									{{-- if item status is available --}}
-									@if($indiv_item->status_id == "3")
+									@if($indiv_item->status_id == "3" && Auth::user()->role_id == "1")
 									<a href="/requests/{{$indiv_item->id }}" class="btn btn-success btn-block btn-green1"> 
 										Request for Approval
 									</a>
 
 
-									@elseif($indiv_item->status_id == "2")
+									@elseif($indiv_item->status_id == "2" && Auth::user()->role_id == "1")
 									<button class="btn btn-block btn-danger btn-red1 notclick"> 
 										Already in Use
 									</button>							
 
-									@elseif($indiv_item->status_id == "1")
+									@elseif($indiv_item->status_id == "1" && Auth::user()->role_id == "1")
 									<button class="btn btn-info btn-block btn-blue1"> 
 										Pending User Request
 									</button>

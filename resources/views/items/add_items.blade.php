@@ -20,8 +20,8 @@
 					<input name="serial_number" id="serial_number" class="form-control col-md-8" cols="20">
 				</div>
 				<div class="form-group row">
-					<label for="quantity" class="col-md-4"> Quantity: </label>
-					<input type="number" name="quantity" id="quantity" class="form-control col-md-8" cols="20">
+					<label for="quantity" class="col-md-4 d-none"> Quantity: </label>
+					<input type="number" name="quantity" id="quantity" class="form-control col-md-8" cols="20" value="1" hidden>
 				</div>
 				<div class="form-group row">
 					<label for="description" class="col-md-4"> Description: </label>

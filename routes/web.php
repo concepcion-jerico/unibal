@@ -29,6 +29,11 @@ Route::middleware("auth")->group(function (){
 		Route::patch('/user_requests/return/{id}', "LaptopRequestController@returnItem")->name('requests');
 		Route::get('/history/user', "LaptopRequestController@showHistoryUser")->name('requests');
 
+		Route::get('/categories', "CategoryController@showCategories")->name('categories');
+		Route::post('/category/add', "CategoryController@addCategory")->name('categories');
+		Route::get('/category/{id}/edit', "CategoryController@updateCategory")->name('categories');
+		Route::delete('/category/{id}/delete', "CategoryController@deleteCategory")->name('categories');
+
 		Route::get('/laptops/add', "ItemController@showAddItemForm")->name('laptops');
 		Route::post('/laptops/add', "ItemController@saveItems")->name('laptops');
 		Route::get('/laptops/{id}/edit', "ItemController@showEditForm")->name('laptops');

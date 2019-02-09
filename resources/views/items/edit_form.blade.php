@@ -38,8 +38,8 @@
 						<input name="serial_number" id="serial_number" class="form-control col-md-8" cols="20" value="{{ $item->serial_number }}">
 					</div>
 					<div class="form-group row">
-						<label for="quantity" class="col-md-4"> Quantity: </label>
-						<input type="number" name="quantity" id="quantity" class="form-control col-md-8" cols="20" value="{{ $item->quantity }}">
+						<label for="quantity" class="col-md-4 d-none"> Quantity: </label>
+						<input type="number" name="quantity" id="quantity" class="form-control col-md-8" cols="20" value="{{ $item->quantity }}" hidden>
 					</div>
 					<div class="form-group row">
 						<label for="description" class="col-md-4"> Description: </label>
@@ -69,8 +69,8 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="status_id" class="col-md-4"> Status: </label>
-						<input type="text" name="status_id" id="status_id" class="form-control col-md-8" value="{{ $item->status_id }}">
+						<label for="status_id" class="col-md-4 d-none"> Status: </label>
+						<input type="text" name="status_id" id="status_id" class="form-control col-md-8" value="{{ $item->status_id }}" hidden>
 					</div>
 
 					<button class="btn btn-success btn-block col-md-8 offset-md-2 btn-green1"> Update Item </button>
