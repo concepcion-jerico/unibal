@@ -41,4 +41,14 @@ class CategoryController extends Controller
     	session::flash("success_message", "Category successfully deleted");
     	return redirect("/categories");
     }
+
+	public function updateCategory($id, Request $request) {
+    	$category = Category::find($id);
+
+    	$category->name = $request->name;
+    	$category->save();
+    	Session::flash("success_message", "Category successfully updated");
+    	return redirect("/categories");
+
+    }
 }

@@ -32,12 +32,23 @@
 						<tr>
 					
 								<td class="text-center">{{ $category->id }}</td>
-								<td class="text-center">{{ $category->name }}</td>
+								<td class="text-center">
+									<form method="POST" action="/category/{{ $category->id }}/edit">
+										{{ csrf_field() }}
+										{{ method_field("PATCH") }}
+										<input type="text" name="name" value="{{ $category->name }}" class="">
+										<button type="submit" class="btn btn-success btn-green1"> Update </button>
+										
+									</form>
+
+										
+										
+									</form>
+								</td>
 								<td class="text-center">{{ $category->created_at->format('F j, Y') }}</td>
 							
 
 								<td class="text-center"> 
-									<a href="/category/{{ $category->id }}/edit" class="btn btn-success btn-green1"> Edit </a>
 							
 									<button class="btn btn-danger btn-red1" data-toggle="modal" data-target="#confirmDelete"> Delete </button>
 								</td>

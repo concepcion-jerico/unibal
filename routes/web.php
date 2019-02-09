@@ -31,7 +31,7 @@ Route::middleware("auth")->group(function (){
 
 		Route::get('/categories', "CategoryController@showCategories")->name('categories');
 		Route::post('/category/add', "CategoryController@addCategory")->name('categories');
-		Route::get('/category/{id}/edit', "CategoryController@updateCategory")->name('categories');
+		Route::patch('/category/{id}/edit', "CategoryController@updateCategory")->name('categories');
 		Route::delete('/category/{id}/delete', "CategoryController@deleteCategory")->name('categories');
 
 		Route::get('/laptops/add', "ItemController@showAddItemForm")->name('laptops');
