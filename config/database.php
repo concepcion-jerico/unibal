@@ -42,11 +42,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'sql12.freemysqlhosting.net'),
+            'host' => env('DB_HOST', 'mysql.hostinger.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'sql12277275'),
-            'username' => env('DB_USERNAME', 'sql12277275'),
-            'password' => env('DB_PASSWORD', 'uDsmeQhjPe'),
+            'database' => env('DB_DATABASE', 'u663841285_ubal'),
+            'username' => env('DB_USERNAME', 'u663841285_ubal'),
+            'password' => env('DB_PASSWORD', 'RUk7KNQKr4zY'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
